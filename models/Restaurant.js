@@ -16,12 +16,11 @@ const Restaurant = connection.define(
         },
         type: {
             type: Sequelize.STRING,
-            allowNull: false,
-            unique: true
+            allowNull: false
         },
         description: {
             type: Sequelize.STRING,
-            allowNull: false
+            allowNull: true
         },
         adress: {
             type: Sequelize.STRING,

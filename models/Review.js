@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
-import connection from '../config/db.js';
-import User from "./User.js";
+import connection from "../config/db.js";
 import Restaurant from "./Restaurant.js";
+import User from "./User.js";
 
 const Review = connection.define(
     'review',
@@ -14,37 +14,37 @@ const Review = connection.define(
         },
         idUser: {
             type: Sequelize.INTEGER,
+            allowNull: false,
             references: {
-                model: User,
+                model: 'users',
                 key: 'id'
-              },
-            allowNull: false
+            }
         },
         idRestaurant: {
             type: Sequelize.INTEGER,
+            allowNull: false,
             references: {
-                model: Restaurant,
+                model: 'restaurants',
                 key: 'id'
-              },
-            allowNull: false
-        },
-        stars: {
-            type: Sequelize.INTEGER,
-            allowNull: false
+            }
         },
         comment: {
             type: Sequelize.STRING,
             allowNull: false
-        }
+        },
+        starts: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
     }
-)
-
-Review.belongsTo(User, {
-    foreignKey: 'idUser'
-});
+);
 
 Review.belongsTo(Restaurant, {
     foreignKey: 'idRestaurant'
+});
+
+Review.belongsTo(User, {
+    foreignKey: 'idUser'
 });
 
 export default Review;
