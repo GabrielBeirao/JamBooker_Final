@@ -2,6 +2,8 @@ import express from "express";
 
 const login = express.Router();
 
-login.get("/", (req, res) => res.send("Rota de Login"));
+login.post("/", (req, res) => {
+    
+});
 
 export default login;
