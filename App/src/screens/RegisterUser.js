@@ -31,7 +31,6 @@ const RegisterUser = ({ navigation }) => {
                 } else {
                     console.log(data)
                 }
-
             } catch (error) {
                 console.log(error);
             }

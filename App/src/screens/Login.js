@@ -1,6 +1,4 @@
-import {
-    StyleSheet, TouchableOpacity, View, Image, useWindowDimensions, Text
-} from "react-native";
+import { StyleSheet, TouchableOpacity, View, Image, useWindowDimensions, Text } from "react-native";
 import React, { useState } from 'react';
 import Logo from '../assets/images/logo.png';
 import CustomInput from "../components/CustomInput";
@@ -13,10 +11,28 @@ const Login = ({ navigation }) => {
     const [password, setPassword] = useState('');
     const { height } = useWindowDimensions();
 
-    const onLoginPressed = () => {
-        alert("Logged in with User " + email + " and " + password);
-        setEmail('');
-        setPassword('');
+    const onLoginPressed = async () => {
+
+
+        try {
+
+            const data = await api.post('/login', {
+                email: email,
+                password: password
+            });
+            if (data.status === 200) {
+                localStorage.setItem('token', data.data.token)
+                alert(data.data.message)
+                navigation.navigate('Home')
+            } else {
+                alert('Email ou Senha Inválidos')
+                setPassword('')
+            }
+        } catch (err) {
+            alert("Erro Inesperado!");
+            console.log(err)
+        }
+
     }
 
     return (

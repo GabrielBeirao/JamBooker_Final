@@ -11,12 +11,21 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
 
+  const token = localStorage.getItem('token');
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }} >
-        {/* <Stack.Screen name='Home' component={Home} /> */}
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="RegisterUser" component={RegisterUser} />
+        { token ? (
+            <Stack.Screen name='Home' component={Home} />
+          ) : (
+            <>
+              <Stack.Screen name="Login" component={Login} />
+              <Stack.Screen name="RegisterUser" component={RegisterUser} />
+              <Stack.Screen name='Home' component={Home} />
+            </>
+          )
+        }
       </Stack.Navigator>
     </NavigationContainer>
   )
