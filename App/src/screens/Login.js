@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity, View, Image, useWindowDimensions, Text, TextInput } from "react-native";
 import React, { useState, useContext } from 'react';
-import Logo from '../../assets/images/Logo.png';
+import Logo from '../assets/images/logo.png';
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import AsyncStorage from '@react-native-async-storage/async-storage';

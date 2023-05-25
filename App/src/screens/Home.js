@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, Button } from 'react-native'
 import React, { useContext } from 'react'
-import { DataContext, Fornecedor } from '../context/dataContext'
+import { Context, Provider } from '../context/dataContext'
 
 const Home = () => {
 
-  const actualState = useContext(DataContext)
+  const actualState = useContext(Context)
 
   return (
     <View style={styles.container}>
@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
 
 export default () => {
   return (
-      <Fornecedor>
+      <Provider>
           <Home />
-      </Fornecedor>
+      </Provider>
   )
 }
