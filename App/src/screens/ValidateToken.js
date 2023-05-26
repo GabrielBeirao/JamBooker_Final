@@ -18,7 +18,7 @@ const ValidateToken = ({ navigation }) => {
                     }
                 });
                 await dispatch({type: 'verify', payload: data.data.authData})
-                navigation.navigate("Home")
+                navigation.navigate("Routes")
             } catch (error) {
                 console.log(error);
                 dispatch({type: 'logIn', payload: false});
