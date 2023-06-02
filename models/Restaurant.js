@@ -22,7 +22,7 @@ const Restaurant = connection.define(
             type: Sequelize.STRING,
             allowNull: true
         },
-        adress: {
+        address: {
             type: Sequelize.STRING,
             allowNull: false
         }
