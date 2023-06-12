@@ -32,7 +32,7 @@ const Review = connection.define(
             type: Sequelize.STRING,
             allowNull: false
         },
-        starts: {
+        stars: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
