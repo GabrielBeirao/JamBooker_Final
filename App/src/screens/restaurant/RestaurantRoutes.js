@@ -8,6 +8,7 @@ import RestaurantReviews from '../review/RestaurantReviews';
 const Stack = createNativeStackNavigator();
 
 const RestaurantRoutes = ({ navigation }) => {
+    
     return (
             <Stack.Navigator screenOptions={{ headerShown: false }} >
                 <Stack.Screen name="MainRestaurants" component={Restaurants} />
