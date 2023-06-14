@@ -33,7 +33,7 @@ const Restaurants = ({ navigation }) => {
     return (
         <View style={styles.view}>
             {state.isAdmin ? (
-                <CustomButton text="Novo Restaurante" onPress={() => navigation.navigate("RegisterRestaurant")} />
+                <CustomButton  text="Novo Estúdio" onPress={() => navigation.navigate("RegisterRestaurant")} />
             ) : (
                 <></>
             )}
@@ -51,7 +51,7 @@ const Restaurants = ({ navigation }) => {
                             <Entypo
                                 name="squared-plus"
                                 size={60}
-                                color="green"
+                                color="#c15eff"
                                 style={styles.icon}
                                 onPress={() => newReview(item)}
                             />
@@ -73,6 +73,10 @@ const styles = StyleSheet.create({
     view: {
         flex: 1,
         justifyContent: "center",
+        paddingTop: 30,
+        alignItems: "center",
+        backgroundColor: '#c15eff'
+
     },
     button: {
         marginBottom: 20
@@ -81,9 +85,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         margin: 5,
+        width: '500px',
         padding: 10,
         borderRadius: 10,
-        backgroundColor: 'lightblue',
+        backgroundColor: '#b1fa00',
         alignItems: 'center'
     },
     text: {
@@ -98,6 +103,6 @@ const styles = StyleSheet.create({
         fontSize: 15
     },
     icon: {
-        margin: 0
+        margin: 10
     }
 });

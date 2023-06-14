@@ -74,7 +74,9 @@ const Login = ({ navigation }) => {
 const styles = StyleSheet.create({
     view: {
         alignItems: 'center',
+        flex:1,
         padding: 20,
+        backgroundColor: '#ede9ea'
     },
     logo: {
         width: '70%',

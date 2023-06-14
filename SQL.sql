@@ -1,5 +1,5 @@
-CREATE DATABASE foodreview;
+CREATE DATABASE jambooker;
 
-CREATE USER 'foodreview'@'localhost' IDENTIFIED BY 'foodreview';
+CREATE USER 'jambooker'@'localhost' IDENTIFIED BY 'jambooker';
 
-GRANT ALL PRIVILEGES ON foodreview.* TO 'foodreview'@'localhost';
+GRANT ALL PRIVILEGES ON jambooker.* TO 'jambooker'@'localhost';

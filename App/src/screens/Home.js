@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Button } from 'react-native'
 import React, { useContext, useState } from 'react'
 import { Context } from '../context/dataContext'
 import CustomButton from '../components/CustomButton';
+import CustomButton2 from './../components/CustomButton2';
 
 const Home = ({ navigation }) => {
 
@@ -10,9 +11,9 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Olá, {state.name}</Text>
-      <CustomButton text="Restaurants" onPress={() => navigation.navigate("Restaurants")} />
-      <CustomButton text="Reviews" onPress={() => navigation.navigate("Reviews")} />
-      <CustomButton text="Users" onPress={() => navigation.navigate("Users")} />
+      <CustomButton2 text="Estúdios" onPress={() => navigation.navigate("Estúdios")} />
+      <CustomButton2 text="Ensaios" onPress={() => navigation.navigate("Ensaios")} />
+      <CustomButton2 text="Users" onPress={() => navigation.navigate("Users")} />
     </View>
   )
 }
@@ -21,11 +22,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent:'space-around'
+    justifyContent:'top',
+    backgroundColor: '#c15eff'
     
   },
   text: {
-    fontSize: 30,
+    fontSize: 20,
+    fontWeight: 'bold',
     margin: 40
   }
 })

@@ -1,7 +1,7 @@
 import { Text, StyleSheet, Pressable } from 'react-native';
 import React from 'react';
 
-const CustomButton = ({ onPress, text }) => {
+const CustomButton2 = ({ onPress, text }) => {
 
     return (
         <Pressable onPress={onPress} style={styles.container}>
@@ -16,7 +16,7 @@ const CustomButton = ({ onPress, text }) => {
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: 'black',
+        backgroundColor: '#b1fa00',
         width: '30%',
         marginVertical: 5,
         alignItems: 'center',
@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     text: {
         padding: 15,
         fontWeight: 'bold',
-        color: 'white',
+        color: 'black',
     }
 
 })
 
-export default CustomButton;
+export default CustomButton2;

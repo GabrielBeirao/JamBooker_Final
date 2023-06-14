@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator();
 const Routes = ({ navigation }) => {
     const { state, dispatch } = useContext(Context)
     return (
-        <Tab.Navigator screenOptions={{
+        <Tab.Navigator  screenOptions={{
             headerRight: () => (
                 <Entypo
                     name='log-out'
@@ -26,7 +26,7 @@ const Routes = ({ navigation }) => {
                 />
             )
         }} >
-            <Tab.Screen
+            <Tab.Screen style={styles.tab}
                 name="Home"
                 component={Home}
                 options={{
@@ -36,20 +36,20 @@ const Routes = ({ navigation }) => {
                 }}
             />
             <Tab.Screen
-                name="Restaurants"
+                name="Estúdios"
                 component={RestaurantRoutes}
                 options={{
                     tabBarIcon: () => (
-                        <Entypo name='bowl' size={30} />
+                        <Entypo name='music' size={30} />
                     )
                 }}
             />
             <Tab.Screen
-                name="Reviews"
+                name="Ensaios"
                 component={ReviewRoutes}
                 options={{
                     tabBarIcon: () => (
-                        <Entypo name='fingerprint' size={30} />
+                        <Entypo name='calendar' size={30} />
                     )
                 }}
             />
@@ -73,6 +73,18 @@ const Routes = ({ navigation }) => {
     )
 }
 
-export default Routes
 
-const styles = StyleSheet.create({})
+
+const styles = StyleSheet.create({
+    header : {
+        backgroundColor: 'black'
+    },
+
+    tab: {
+        fontWeight: 'bold'
+    }
+
+    
+})
+
+export default Routes
