@@ -2,22 +2,20 @@ import { View, Text, StyleSheet, Button, FlatList, TouchableOpacity } from 'reac
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../context/dataContext';
 import api from '../../api';
-import Stars from 'react-native-stars';
-import { Entypo } from "@expo/vector-icons";
 
-const RestaurantReviews = ({ navigation }) => {
+const EstudioEnsaios = ({ navigation }) => {
 
     const { state } = useContext(Context)
 
-    const [reviews, setReviews] = useState({});
+    const [ensaios, setEnsaios] = useState({});
 
     useEffect(() => {
         const onScreenLoad = async () => {
-            const list = await api.get('/review/findByRestaurant', {
+            const list = await api.get('/ensaio/findByEstudio', {
                 params: {
-                    idRestaurant: state.idRestaurant,
+                    idEstudio: state.idEstudio,
                 },
-            }).then((res) => setReviews(res.data.reviews))
+            }).then((res) => setEnsaios(res.data.ensaios))
         }
         onScreenLoad();
     }, [state.update]
@@ -26,22 +24,14 @@ const RestaurantReviews = ({ navigation }) => {
     return (
         <View style={styles.view}>
             <FlatList
-                data={reviews}
+                data={ensaios}
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.container}>
                             <View style={styles.text}>
-                                <Text style={styles.title}>{item.comment}</Text>
-                                <Stars
-                                    count={5}
-                                    display={item.stars}
-                                    half={false}
-                                    starSize={50}
-                                    fullStar={<Entypo name='star' style={[styles.myStarStyle]} />}
-                                    halfStar={<Entypo name='star' style={[styles.myStarStyle]} />}
-                                    emptyStar={<Entypo name='star-outlined' style={[styles.myEmptyStarStyle]} />}
-                                />
-                                <Text style={styles.item}>Avaliado por: {item.user.name}</Text>
+                                <Text style={styles.title}>{item.data}</Text>
+                                <Text style={styles.title}>{item.hora}</Text>
+                                <Text style={styles.item}>Agendado por: {item.user.name}</Text>
                             </View>
                         </View>
                     )
@@ -55,7 +45,7 @@ const RestaurantReviews = ({ navigation }) => {
     )
 }
 
-export default RestaurantReviews;
+export default EstudioEnsaios;
 
 const styles = StyleSheet.create({
     view: {

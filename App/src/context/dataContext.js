@@ -7,8 +7,8 @@ let initialState = {
     name: '',
     isAdmin: false,
     idUser: '',
-    idRestaurant: '',
-    nameRestaurant: '',
+    idEstudio: '',
+    nameEstudio: '',
     update: false
 }
 
@@ -32,11 +32,11 @@ const reducer = (state, action) => {
                 isAdmin: action.payload.admin, 
                 name: action.payload.name,
             }
-        case "setRestaurant":
+        case "setEstudio":
             return { 
                 ...state, 
-                idRestaurant: action.payload.id,
-                nameRestaurant: action.payload.name                
+                idEstudio: action.payload.id,
+                nameEstudio: action.payload.name                
             }
         case "update":
             return {

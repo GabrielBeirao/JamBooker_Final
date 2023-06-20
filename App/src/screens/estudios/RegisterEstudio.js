@@ -7,7 +7,7 @@ import api from '../../api';
 import { Context } from '../../context/dataContext';
 import { Picker } from '@react-native-picker/picker';
 
-const RegisterRestaurant = ({ navigation }) => {
+const RegisterEstudio = ({ navigation }) => {
 
     const { state, dispatch } = useContext(Context);
 
@@ -20,7 +20,7 @@ const RegisterRestaurant = ({ navigation }) => {
 
     const onRegisterPressed = async () => {
         try {
-            const authData = await api.post("/restaurant/register", {
+            const authData = await api.post("/estudio/register", {
                 name: name,
                 type: type,
                 description: description,
@@ -52,7 +52,7 @@ const RegisterRestaurant = ({ navigation }) => {
             />
 
             <CustomInput
-                placeholder="Restaurant Name"
+                placeholder="Nome do Estudio"
                 value={name}
                 setValue={setName}
             />
@@ -62,16 +62,10 @@ const RegisterRestaurant = ({ navigation }) => {
                 style={styles.picker}
                 onValueChange={setType}
             >
-                <Picker.Item label="FastFood" value="FastFood" />
-                <Picker.Item label="Japanese" value="Japanese" />
-                <Picker.Item label="Italian" value="Italian" />
-                <Picker.Item label="French" value="French" />
-                <Picker.Item label="Vegan" value="Vegan" />
-                <Picker.Item label="Brazilian" value="Brazilian" />
-                <Picker.Item label="Chinese" value="Chinese" />
-                <Picker.Item label="Barbecue" value="Barbecue" />
-                <Picker.Item label="Mexican" value="Mexican" />
-                <Picker.Item label="Hawaiian" value="Hawaiian" />
+                <Picker.Item label="Instrumentos disponíveis para Uso" value="Instrumentos disponíveis para Uso" />
+                <Picker.Item label="Banda precisa trazer instrumentos" value="Banda precisa trazer instrumentos" />
+                <Picker.Item label="A casa aluga os instrumentos" value="A casa aluga os instrumentos" />
+          
             </Picker>
 
             <CustomInput
@@ -119,4 +113,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default RegisterRestaurant;
+export default RegisterEstudio;

@@ -8,17 +8,17 @@ import { Entypo } from "@expo/vector-icons";
 const Users = ({ navigation }) => {
     const { state, dispatch } = useContext(Context)
 
-    const [reviews, setReviews] = useState({});
+    const [ensaios, setEnsaios] = useState({});
 
     useEffect(() => {
         const onScreenLoad = async () => {
-            const list = await api.get('/review/findByUser', {
+            const list = await api.get('/ensaio/findByUser', {
                 params: {
                     idUser: state.idUser,
                 }
             });
             console.log(list);
-            setReviews(list.data.reviews)
+            setEnsaios(list.data.ensaios)
             dispatch({ type: "update", payload: false })
         }
         onScreenLoad();
@@ -28,12 +28,12 @@ const Users = ({ navigation }) => {
     return (
         <View style={styles.view}>
             <FlatList
-                data={reviews}
+                data={ensaios}
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.container}>
                             <View style={styles.text}>
-                                <Text style={styles.item}>{item.restaurant.name}</Text>
+                                <Text style={styles.item}>{item.estudio.name}</Text>
                                 <Text style={styles.title}>{item.comment}</Text>
                                 <Stars
                                     count={5}

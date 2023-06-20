@@ -5,15 +5,15 @@ import api from '../../api';
 import { Entypo } from '@expo/vector-icons';
 import CustomButton from '../../components/CustomButton';
 
-const Restaurants = ({ navigation }) => {
+const Estudios = ({ navigation }) => {
     const { state, dispatch } = useContext(Context);
 
-    const [restaurants, setRestaurants] = useState({});
+    const [estudios, setEstudios] = useState({});
 
     useEffect(() => {
         const onScreenLoad = async () => {
-            const list = await api.get('/restaurant/find');
-            setRestaurants(list.data.restaurants);
+            const list = await api.get('/estudio/find');
+            setEstudios(list.data.estudios);
             dispatch({ type: "update", payload: false });
         }
         onScreenLoad();
@@ -21,24 +21,24 @@ const Restaurants = ({ navigation }) => {
     )
 
     const seeReview = async (item) => {
-        await dispatch({ type: 'setRestaurant', payload: item });
-        navigation.navigate('RestaurantReviews');
+        await dispatch({ type: 'setEstudio', payload: item });
+        navigation.navigate('EstudioEnsaios');
     }
 
     const newReview = async (item) => {
-        await dispatch({ type: 'setRestaurant', payload: item });
-        navigation.navigate('RegisterReview');
+        await dispatch({ type: 'setEstudio', payload: item });
+        navigation.navigate('RegisterEnsaio');
     }
 
     return (
         <View style={styles.view}>
             {state.isAdmin ? (
-                <CustomButton  text="Novo Estúdio" onPress={() => navigation.navigate("RegisterRestaurant")} />
+                <CustomButton  text="Novo Estúdio" onPress={() => navigation.navigate("RegisterEstudio")} />
             ) : (
                 <></>
             )}
             <FlatList
-                data={restaurants}
+                data={estudios}
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.container}>
@@ -67,7 +67,7 @@ const Restaurants = ({ navigation }) => {
     )
 }
 
-export default Restaurants;
+export default Estudios;
 
 const styles = StyleSheet.create({
     view: {

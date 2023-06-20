@@ -6,8 +6,8 @@ import { Entypo } from '@expo/vector-icons'
 import { Context } from '../context/dataContext'
 
 import Home from './Home'
-import RestaurantRoutes from './restaurant/RestaurantRoutes'
-import ReviewRoutes from './review/ReviewRoutes'
+import EstudioRoutes from './estudios/EstudioRoutes'
+import EnsaioRoutes from './ensaios/EnsaioRoutes'
 import Users from './Users'
 
 const Tab = createBottomTabNavigator();
@@ -37,7 +37,7 @@ const Routes = ({ navigation }) => {
             />
             <Tab.Screen
                 name="Estúdios"
-                component={RestaurantRoutes}
+                component={EstudioRoutes}
                 options={{
                     tabBarIcon: () => (
                         <Entypo name='music' size={30} />
@@ -46,7 +46,7 @@ const Routes = ({ navigation }) => {
             />
             <Tab.Screen
                 name="Ensaios"
-                component={ReviewRoutes}
+                component={EnsaioRoutes}
                 options={{
                     tabBarIcon: () => (
                         <Entypo name='calendar' size={30} />

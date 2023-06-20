@@ -5,27 +5,26 @@ import Logo from '../../assets/images/logo.png';
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 import { Context } from "../../context/dataContext";
-import Stars from 'react-native-stars';
 import { Entypo } from "@expo/vector-icons";
 
-const RegisterReview = ({ navigation }) => {
+const RegisterEnsaio = ({ navigation }) => {
 
     const { state, dispatch } = useContext(Context);
 
     const [idUser, setidUser] = useState(state.idUser);
-    const [idRestaurant, setidRestaurant] = useState(state.idRestaurant);
-    const [comment, setComment] = useState('');
-    const [stars, setStars] = useState('');
+    const [idEstudio, setidEstudio] = useState(state.idEstudio);
+    const [data, setData] = useState('');
+    const [hora, setHora] = useState('');
 
     const { height } = useWindowDimensions();
 
     const onRegisterPressed = async () => {
         try {
-            const authData = await api.post("/review/register", {
+            const authData = await api.post("/ensaio/register", {
                 idUser: idUser,
-                idRestaurant: idRestaurant,
-                comment: comment,
-                stars: stars,
+                idEstudio: idEstudio,
+                data: data,
+                hora: hora,
             });
             if (authData.status === 200) {
                 alert(authData.data.message)
@@ -51,7 +50,7 @@ const RegisterReview = ({ navigation }) => {
             />
 
             <CustomInput
-                value={state.nameRestaurant}
+                value={state.nameEstudio}
                 editable={false}
             />
 
@@ -61,20 +60,15 @@ const RegisterReview = ({ navigation }) => {
             />
 
             <CustomInput
-                placeholder="Comment"
-                value={comment}
-                setValue={setComment}
+                placeholder="Data"
+                value={data}
+                setValue={setData}
             />
 
-            <Stars
-                default={0}
-                update={(val) => { setStars(val) }}
-                count={5}
-                half={false}
-                starSize={50}
-                fullStar={<Entypo name='star' style={[styles.myStarStyle]} />}
-                halfStar={<Entypo name='star' style={[styles.myStarStyle]} />}
-                emptyStar={<Entypo name='star-outlined' style={[styles.myEmptyStarStyle]} />}
+            <CustomInput
+                placeholder="Hora"
+                value={hora}
+                setValue={setHora}
             />
 
             <CustomButton text="Register" onPress={onRegisterPressed} />
@@ -112,4 +106,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default RegisterReview;
+export default RegisterEnsaio;
