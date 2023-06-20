@@ -36,7 +36,8 @@ const EstudioEnsaios = ({ navigation }) => {
                         </View>
                     )
                 }
-                }
+            
+            }
                 keyExtractor={(item) => item.id}
             />
         </View>
