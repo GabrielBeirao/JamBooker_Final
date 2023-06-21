@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import { Context } from '../context/dataContext'
 import CustomButton from '../components/CustomButton';
 import CustomButton2 from './../components/CustomButton2';
-
+import Logo from '../assets/images/logo.png';
 
 const Home = ({ navigation }) => {
 
@@ -18,7 +18,7 @@ const Home = ({ navigation }) => {
         borderRadius: 50,
         margin: 50
       }}
-        source={{ uri: "https://images.unsplash.com/photo-1619418917687-0513820d96f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" }}
+        source={{ uri: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" }}
       />
 
       <Text style={styles.text}>Olá, {state.name}</Text>
@@ -30,7 +30,11 @@ const Home = ({ navigation }) => {
       <CustomButton2 text="Ensaios" onPress={() => navigation.navigate("Ensaios")} />
       <CustomButton2 text="Users" onPress={() => navigation.navigate("Users")} />
 
-
+      <Image 
+        source={Logo}
+        style={styles.logo}
+        resizeMode="contain"
+        />
 
     </View>
   )
@@ -54,6 +58,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#c15eff',
     paddingBottom:30
+  },
+
+  logo: {
+
+    margin: '30',
+    height:'70px',
+    width: '70px'
   }
 })
 

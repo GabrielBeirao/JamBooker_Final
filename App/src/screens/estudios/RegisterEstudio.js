@@ -69,7 +69,7 @@ const RegisterEstudio = ({ navigation }) => {
             </Picker>
 
             <CustomInput
-                placeholder="Description"
+                placeholder="Valor/Hora"
                 value={description}
                 setValue={setDescription}
             />

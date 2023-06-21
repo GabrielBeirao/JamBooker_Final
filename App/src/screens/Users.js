@@ -28,10 +28,11 @@ const Users = ({ navigation }) => {
 
                             <Image style={{
                                 width: 60,
-                                height: 100,
+                                height: 60,
+                                borderRadius:50,
                                 margin: 50
                             }}
-                                source={{ uri: "https://images.unsplash.com/photo-1589512842653-c7ccbec46027?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" }}
+                                source={{ uri: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" }}
                             />
 
                             <View style={styles.text}>
@@ -56,24 +57,28 @@ const styles = StyleSheet.create({
     view: {
         flex: 1,
         justifyContent: "center",
-        paddingTop: 30,
         alignItems: "center",
-        backgroundColor: '#ede9ea'
+        backgroundColor: '#ede9ea',
+
 
     },
     container: {
         flexDirection: "row",
         flexWrap: "wrap",
         margin: 5,
-        padding: 10,
-        borderRadius: 10,
         backgroundColor: '#b1fa00',
-        alignItems: 'center'
+        alignItems: 'center',
+        width:270,
+        height:'40%'
+ 
     },
     text: {
         height: 120,
         width: '100%',
         justifyContent: "center",
+        width:270,
+        height:'10%',
+        borderRadius:50
     },
     title: {
         fontSize: 15,
@@ -87,19 +92,5 @@ const styles = StyleSheet.create({
     },
     icon: {
         margin: 10
-    },
-    myStarStyle: {
-        color: 'black',
-        backgroundColor: 'transparent',
-        // textShadowColor: 'black',
-        // textShadowOffset: { width: 1, height: 1 },
-        textShadowRadius: 2,
-        width: '40%',
-        fontSize: 30
-    },
-    myEmptyStarStyle: {
-        color: 'gray',
-        width: 50,
-        fontSize: 30
     }
 });
