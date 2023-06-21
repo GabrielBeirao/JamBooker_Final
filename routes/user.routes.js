@@ -53,4 +53,20 @@ user.post("/register", async (req, res) => {
 
 });
 
+user.get('/find', async (req, res) => {
+    const users = await User.findAll().catch(
+        (err) => {
+            console.log(err)
+        }
+    );
+
+    if (users){
+        return res.json({users})
+    } else {
+        return null
+    }
+})
+
+
+
 export default user;

@@ -1,24 +1,17 @@
-import { View, Text, StyleSheet, Button, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Button, FlatList, TouchableOpacity, Image } from 'react-native';
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../context/dataContext'
 import api from '../api';
-import Stars from 'react-native-stars';
-import { Entypo } from "@expo/vector-icons";
 
 const Users = ({ navigation }) => {
     const { state, dispatch } = useContext(Context)
 
-    const [ensaios, setEnsaios] = useState({});
+    const [users, setUsers] = useState({});
 
     useEffect(() => {
         const onScreenLoad = async () => {
-            const list = await api.get('/ensaio/findByUser', {
-                params: {
-                    idUser: state.idUser,
-                }
-            });
-            console.log(list);
-            setEnsaios(list.data.ensaios)
+            const list = await api.get('/user/find');
+            setUsers(list.data.users)
             dispatch({ type: "update", payload: false })
         }
         onScreenLoad();
@@ -28,22 +21,22 @@ const Users = ({ navigation }) => {
     return (
         <View style={styles.view}>
             <FlatList
-                data={ensaios}
+                data={users}
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.container}>
+
+                            <Image style={{
+                                width: 60,
+                                height: 100,
+                                margin: 50
+                            }}
+                                source={{ uri: "https://images.unsplash.com/photo-1589512842653-c7ccbec46027?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" }}
+                            />
+
                             <View style={styles.text}>
-                                <Text style={styles.item}>{item.estudio.name}</Text>
-                                <Text style={styles.title}>{item.comment}</Text>
-                                <Stars
-                                    count={5}
-                                    display={item.stars}
-                                    half={false}
-                                    starSize={50}
-                                    fullStar={<Entypo name='star' style={[styles.myStarStyle]} />}
-                                    halfStar={<Entypo name='star' style={[styles.myStarStyle]} />}
-                                    emptyStar={<Entypo name='star-outlined' style={[styles.myEmptyStarStyle]} />}
-                                />
+                                <Text style={styles.item}>{item.name}</Text>
+                                <Text style={styles.title}>{item.email}</Text>
                             </View>
                         </View>
                     )
@@ -65,7 +58,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         paddingTop: 30,
         alignItems: "center",
-        backgroundColor: '#c15eff'
+        backgroundColor: '#ede9ea'
 
     },
     container: {

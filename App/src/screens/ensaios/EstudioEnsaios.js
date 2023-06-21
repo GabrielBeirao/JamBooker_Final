@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Button, FlatList, TouchableOpacity } from 'reac
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../context/dataContext';
 import api from '../../api';
+import { Entypo } from '@expo/vector-icons';
 
 const EstudioEnsaios = ({ navigation }) => {
 
@@ -33,6 +34,12 @@ const EstudioEnsaios = ({ navigation }) => {
                                 <Text style={styles.title}>{item.hora}</Text>
                                 <Text style={styles.item}>Agendado por: {item.user.name}</Text>
                             </View>
+                            <Entypo
+                                name="squared-plus"
+                                size={40}
+                                color="#b1fa00"
+                                style={styles.icon}
+                            />
                         </View>
                     )
                 }
@@ -52,9 +59,13 @@ const styles = StyleSheet.create({
     view: {
         flex: 1,
         justifyContent: "center",
+        paddingTop: 30,
         backgroundColor: '#ede9ea',
-        paddingTop: 20
-        
+        alignItems: 'center'
+
+    },
+    button: {
+        marginBottom: 20
     },
     container: {
         flexDirection: "row",
@@ -64,37 +75,24 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#b1fa00',
         alignItems: 'center'
+        
     },
     text: {
         height: 120,
-        width: '100%',
-        alignItems: 'center'
-    },
-    title: {
-        fontSize: 20,
-        margin: 10,
-        fontWeight: 'bold'
-    },
-    item: {
-        margin: 10,
-        fontSize: 15,
+        justifyContent: "center",
+        width: '70%',
+      
         
     },
+    title: {
+        fontSize: 14,
+        fontWeight:'bold'
+
+    },
+    item: {
+        fontSize: 14
+    },
     icon: {
-        margin: 10
-    },
-    myStarStyle: {
-        color: 'orange',
-        backgroundColor: 'transparent',
-        textShadowColor: 'black',
-        textShadowOffset: { width: 1, height: 1 },
-        textShadowRadius: 2,
-        width: 50,
-        fontSize: 50
-    },
-    myEmptyStarStyle: {
-        color: 'gray',
-        width: 50,
-        fontSize: 50
+        margin: 10,
     }
 });

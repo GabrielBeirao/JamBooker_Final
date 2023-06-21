@@ -31,9 +31,9 @@ const EnsaiosUsuario = ({ navigation }) => {
                     return (
                         <View style={styles.container}>
                             <View style={styles.text}>
-                                <Text style={styles.item}>{item.estudio.name}</Text>
-                                <Text style={styles.title}>{item.data}</Text>
-                                <Text style={styles.title}>{item.hora}</Text>
+                                <Text style={styles.title}>{item.estudio.name}</Text>
+                                <Text style={styles.item}>{item.data}</Text>
+                                <Text style={styles.item}>{item.hora}</Text>
                             </View>
                         </View>
                     )
@@ -54,38 +54,32 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         paddingTop: 30,
-        alignItems: "center",
         backgroundColor: '#ede9ea',
-        width:'100%'
 
     },
     container: {
         flexDirection: "row",
         flexWrap: "wrap",
         margin: 5,
-        padding: 10,
         borderRadius: 10,
-        backgroundColor: '#b1fa00',
-        alignItems: 'center',
-    
+        backgroundColor: '#b1fa00'
     },
+
     text: {
-        
-        width: '100%',
-        justifyContent: "center"
+        height: 60,
+        width: 260,
+        margin:5,
+        paddingLeft:30
+      
     },
     title: {
-        fontSize: 15,
-        margin: 5,
-        textAlign: 'center'
+        fontSize: 14,
+        fontWeight:'bold'
+
     },
     item: {
-        margin: 5,
-        fontSize: 15,
-        fontWeight: 'bold'
-    },
-    icon: {
-        margin: 10
+        fontSize: 14
     }
+
 
 });

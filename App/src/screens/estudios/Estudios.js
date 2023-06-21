@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity , Image} from 'react-native';
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../context/dataContext';
 import api from '../../api';
@@ -33,7 +33,7 @@ const Estudios = ({ navigation }) => {
     return (
         <View style={styles.view}>
             {state.isAdmin ? (
-                <CustomButton  text="Novo Estúdio" onPress={() => navigation.navigate("RegisterEstudio")} />
+                <CustomButton text="Novo Estúdio" onPress={() => navigation.navigate("RegisterEstudio")} />
             ) : (
                 <></>
             )}
@@ -42,7 +42,10 @@ const Estudios = ({ navigation }) => {
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.container}>
+                        
                             <TouchableOpacity style={styles.text} onPress={() => seeReview(item)}>
+
+
                                 <Text style={styles.title}>{item.name}</Text>
                                 <Text style={styles.item}>{item.type}</Text>
                                 <Text style={styles.item}>{item.description}</Text>
@@ -50,7 +53,7 @@ const Estudios = ({ navigation }) => {
                             </TouchableOpacity>
                             <Entypo
                                 name="squared-plus"
-                                size={60}
+                                size={40}
                                 color="black"
                                 style={styles.icon}
                                 onPress={() => newReview(item)}
@@ -74,8 +77,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         paddingTop: 30,
-        alignItems: "center",
         backgroundColor: '#ede9ea',
+        alignItems: 'center'
 
     },
     button: {
@@ -89,17 +92,22 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#b1fa00',
         alignItems: 'center'
+        
     },
     text: {
         height: 120,
         width: '70%',
-        justifyContent: "center",
+        justifyContent: "center"
+      
+        
     },
     title: {
-        fontSize: 30
+        fontSize: 14,
+        fontWeight:'bold'
+
     },
     item: {
-        fontSize: 15
+        fontSize: 14
     },
     icon: {
         margin: 10,
