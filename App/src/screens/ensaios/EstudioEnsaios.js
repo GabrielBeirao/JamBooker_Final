@@ -52,6 +52,9 @@ const styles = StyleSheet.create({
     view: {
         flex: 1,
         justifyContent: "center",
+        backgroundColor: '#ede9ea',
+        paddingTop: 20
+        
     },
     container: {
         flexDirection: "row",
@@ -59,22 +62,23 @@ const styles = StyleSheet.create({
         margin: 5,
         padding: 10,
         borderRadius: 10,
-        backgroundColor: 'lightblue',
+        backgroundColor: '#b1fa00',
         alignItems: 'center'
     },
     text: {
         height: 120,
         width: '100%',
-        justifyContent: "center",
+        alignItems: 'center'
     },
     title: {
-        fontSize: 30,
+        fontSize: 20,
         margin: 10,
-        textAlign: 'center'
+        fontWeight: 'bold'
     },
     item: {
         margin: 10,
-        fontSize: 15
+        fontSize: 15,
+        
     },
     icon: {
         margin: 10

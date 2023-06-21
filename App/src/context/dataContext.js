@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
 let initialState = {
     Loading: true,
     isLogged: false,

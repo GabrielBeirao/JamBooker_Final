@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         paddingTop: 30,
         alignItems: "center",
-        backgroundColor: '#c15eff'
+        backgroundColor: '#ede9ea',
+        width:'100%'
 
     },
     container: {
@@ -65,12 +66,13 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         backgroundColor: '#b1fa00',
-        alignItems: 'center'
+        alignItems: 'center',
+    
     },
     text: {
-        height: 120,
+        
         width: '100%',
-        justifyContent: "center",
+        justifyContent: "center"
     },
     title: {
         fontSize: 15,
@@ -84,19 +86,6 @@ const styles = StyleSheet.create({
     },
     icon: {
         margin: 10
-    },
-    myStarStyle: {
-        color: 'black',
-        backgroundColor: 'transparent',
-        // textShadowColor: 'black',
-        // textShadowOffset: { width: 1, height: 1 },
-        textShadowRadius: 2,
-        width: '40%',
-        fontSize: 30
-    },
-    myEmptyStarStyle: {
-        color: 'gray',
-        width: 50,
-        fontSize: 30
     }
+
 });

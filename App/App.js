@@ -17,7 +17,7 @@ const App = () => {
   const { state } = useContext(Context);
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} >
+      <Stack.Navigator  screenOptions={{ headerShown: false }} >
         {state.Loading ? (
           <Stack.Screen name="ValidateToken" component={ValidateToken} />
         ) : (

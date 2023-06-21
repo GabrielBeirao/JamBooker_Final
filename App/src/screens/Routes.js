@@ -1,4 +1,4 @@
-import { StyleSheet, Button } from 'react-native'
+import { StyleSheet, Button, Image } from 'react-native'
 import React, { useContext } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Entypo } from '@expo/vector-icons'
@@ -15,14 +15,21 @@ const Tab = createBottomTabNavigator();
 const Routes = ({ navigation }) => {
     const { state, dispatch } = useContext(Context)
     return (
-        <Tab.Navigator  screenOptions={{
+        <Tab.Navigator 
+        screenOptions={{
+            tabBarStyle: {
+                backgroundColor: 'black'
+            },
+            headerStyle: {
+                backgroundColor: 'black',
+              },
             headerRight: () => (
                 <Entypo
                     name='log-out'
                     size={20}
                     style={{ margin: 10 }}
                     onPress={() => dispatch({ type: 'logOut' })}
-                    color="#000"
+                    color="white"
                 />
             )
         }} >
@@ -31,8 +38,8 @@ const Routes = ({ navigation }) => {
                 component={Home}
                 options={{
                     tabBarIcon: () => (
-                        <Entypo name='home' size={30} />
-                    ),
+                        <Entypo name='home' size={30} color="white" />
+                    )
                 }}
             />
             <Tab.Screen
@@ -40,7 +47,7 @@ const Routes = ({ navigation }) => {
                 component={EstudioRoutes}
                 options={{
                     tabBarIcon: () => (
-                        <Entypo name='music' size={30} />
+                        <Entypo name='music' size={30} color="white"/>
                     )
                 }}
             />
@@ -49,7 +56,7 @@ const Routes = ({ navigation }) => {
                 component={EnsaioRoutes}
                 options={{
                     tabBarIcon: () => (
-                        <Entypo name='calendar' size={30} />
+                        <Entypo name='calendar' size={30} color="white" />
                     )
                 }}
             />
@@ -60,7 +67,7 @@ const Routes = ({ navigation }) => {
                     component={Users}
                     options={{
                         tabBarIcon: () => (
-                            <Entypo name='user' size={30} />
+                            <Entypo name='user' size={30} color="white" />
                         )
                     }}
                 />
@@ -77,7 +84,7 @@ const Routes = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     header : {
-        backgroundColor: 'black'
+        color: 'black'
     },
 
     tab: {

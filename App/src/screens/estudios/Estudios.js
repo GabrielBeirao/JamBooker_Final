@@ -51,7 +51,7 @@ const Estudios = ({ navigation }) => {
                             <Entypo
                                 name="squared-plus"
                                 size={60}
-                                color="#c15eff"
+                                color="black"
                                 style={styles.icon}
                                 onPress={() => newReview(item)}
                             />
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         paddingTop: 30,
         alignItems: "center",
-        backgroundColor: '#c15eff'
+        backgroundColor: '#ede9ea',
 
     },
     button: {
@@ -85,7 +85,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         margin: 5,
-        width: '500px',
         padding: 10,
         borderRadius: 10,
         backgroundColor: '#b1fa00',
@@ -93,7 +92,7 @@ const styles = StyleSheet.create({
     },
     text: {
         height: 120,
-        width: '80%',
+        width: '70%',
         justifyContent: "center",
     },
     title: {
@@ -103,6 +102,6 @@ const styles = StyleSheet.create({
         fontSize: 15
     },
     icon: {
-        margin: 10
+        margin: 10,
     }
 });
